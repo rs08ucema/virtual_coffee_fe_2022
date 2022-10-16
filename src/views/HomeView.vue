@@ -2,6 +2,8 @@
 
   <Header/>
 
+  <!-- Here the rest of Components -->
+
 </template>
 
 <script>
