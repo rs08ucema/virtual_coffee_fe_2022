@@ -1,24 +1,25 @@
 <template>
-
   <div id="footer-container">
 
     <div id="footer-text">
-      <p>Virtual Coffee</p>
-      <p>Direccion: Alvear 123</p>
-      <p>Telefono: 49231 - 1232</p>
-      <p>Pasion por el cafe</p>
+      <p id="brand">{{ title }}</p>
+      <p>{{ phone }}</p>
+      <p>{{ location }}</p>
+      <p>{{ copyRight }}</p>
     </div>
 
   </div>
-
 </template>
 
 <script>
 export default {
   name: "FooterComp",
-  data() {
+  data () {
     return {
-
+      title: "Virtual Coffee",
+      phone: "Teléfono: 4832 1232",
+      location: "Dirección: Av. Leandro Além 321 PB",
+      copyRight: "© Copyright 2022 Virtual Coffee. Todos los derechos reservados",
     }
   }
 }
