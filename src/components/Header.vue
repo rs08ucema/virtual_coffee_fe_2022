@@ -1,38 +1,48 @@
 <template>
-
   <div id="header-container">
 
-      <img src="../assets/imgs/coffee_logo.jpg" alt="Coffee Logo">
+    <!-- TODO add router-link to HomePage-->
+    <div>
+      <img src="../assets/img/coffee_logo.jpg" alt="Coffee Logo">
+    </div>
 
-      <div id="header-title">
-        <h1 id="title">{{ title }}</h1>
-        <p id="subtitle">{{ subtitle }}</p>
+
+    <div id="header-title">
+      <h1 id="title">{{ title }}</h1>
+      <p id="subtitle">{{ subtitle }}</p>
+    </div>
+
+    <div class="header-button">
+      <div style="width: 145px">
+        <!-- TODO add router-link to NewSubscription-->
+        <div id="menu-container" v-if="showButton">
+          {{ subscription }}
+        </div>
       </div>
-
-      <input class="header-button" type="button" value="Subscription" v-on:click="subscribe()">
+    </div>
 
   </div>
-
 </template>
 
 <script>
 export default {
   name: 'HeaderComp',
+  props: {
+    showButton: {
+      type: Boolean,
+      default: true
+    }
+  },
   data() {
     return {
       title: "Virtual Coffee",
       subtitle: "El verdadero sabor a café",
-    }
-  },
-  methods: {
-    subscribe() {
-      console.log("Ir a subscribirse!!")
+      subscription: "Subscribite",
     }
   }
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 #header-container {
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -51,18 +61,22 @@ img {
   max-width: 120px;
   border-radius: 50%;
 }
+
 #header-title {
   text-align: center;
 }
+
 #title {
   font-family: serif;
   font-style: italic;
   font-size: 300%;
 }
+
 #subtitle {
   font-style: italic;
   font-size: 14px;
 }
+
 #menu-container {
   align-self: center;
   padding: 15px 25px;
@@ -70,6 +84,7 @@ img {
   background: #c7a17a;
   border: 2px solid #493a2b;
 }
+
 .header-button {
   text-decoration: none;
   color: #fff;
