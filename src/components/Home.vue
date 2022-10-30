@@ -2,7 +2,9 @@
   <div id="main-home">
 
     <div class="main-box">
-      <!-- TODO add router-link to OrderOnline-->
+
+      <!--  add router-link to OrderOnlineView - replace the span and remove the event listener -->
+
       <span class="button-box" v-on:click="$emit('menuEvent', 'order')">Pedido Online</span>
       <img class="home-img" src="../assets/img/community-1.jpg" alt="Comunidad 1">
       <p class="phrases">Creamos una comunidad</p>

@@ -3,17 +3,24 @@ import * as Vue from 'vue';
 import * as  VueRouter from 'vue-router';
 
 // Import defined Views
-import HomeView from "@/views/HomeView";
 import App from "@/App";
-// import NotFound from "@/views/NotFound";
+import HomeView from "@/views/HomeView";
 
 
 // Here we will define all the routes
 const routes = [
-    {path: '/', component: HomeView},
+    {path: '/', name: "HomeRoute", component: HomeView},
 
-    // { path: '*', component: NotFound }
-]
+    // Add the missing paths to views and components
+
+    // '/subscription'
+    // '/subscription/success'
+    // '/order-online'
+    // '/order-online/checkout'
+
+
+    // add not Found path: '*' -> at the end
+];
 
 // Create the object router, add pass the routes above
 const router = VueRouter.createRouter({
@@ -22,6 +29,6 @@ const router = VueRouter.createRouter({
 });
 
 // Add router to the Vue instance
-Vue.createApp(App)
-    .use(router)
-    .mount('#app');
+const app = Vue.createApp(App);
+app.use(router);
+app.mount('#app');
