@@ -1,7 +1,8 @@
 <template>
   <div id="header-container">
 
-    <!-- TODO add router-link to HomePage-->
+    <!--  add router-link to HomePage replace the <div> by <router-link>-->
+
     <div>
       <img src="../assets/img/coffee_logo.jpg" alt="Coffee Logo">
     </div>
@@ -12,9 +13,10 @@
       <p id="subtitle">{{ subtitle }}</p>
     </div>
 
+    <!--  add router-link to NewSubscription-->
+
     <div class="header-button">
       <div style="width: 145px">
-        <!-- TODO add router-link to NewSubscription-->
         <div id="menu-container" v-if="showButton">
           {{ subscription }}
         </div>

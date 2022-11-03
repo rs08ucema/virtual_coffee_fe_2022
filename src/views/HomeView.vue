@@ -13,7 +13,6 @@
         <Home v-if="menu.home" @menu-event="showMenuOptionSelected"/>
         <BeverageMenu v-if="menu.beverage"/>
         <SnackMenu v-if="menu.snacks"/>
-        <OrderOnline v-if="menu.order"/>
       </div>
 
       <div id="div-banner">
@@ -33,7 +32,6 @@ import SideBar from "@/components/SideBar";
 import Home from "@/components/Home";
 import BeverageMenu from "@/components/BeverageMenu";
 import SnackMenu from "@/components/SnackMenu";
-import OrderOnline from "@/components/OrderOnline";
 
 export default {
   name: "HomeView",
@@ -45,7 +43,6 @@ export default {
     Home,
     BeverageMenu,
     SnackMenu,
-    OrderOnline
   },
   data() {
     return {

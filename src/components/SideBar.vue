@@ -4,7 +4,8 @@
     <p class="menu" v-on:click="$emit('menuEvent', 'beverage')">Menú Bebidas</p>
     <p class="menu" v-on:click="$emit('menuEvent', 'snacks')">Menú Snacks</p>
 
-    <!-- TODO add router-link to OrderOnline-->
+    <!--  add router-link to OrderOnlineView - replace the span and remove the event listener -->
+
     <p class="menu order" v-on:click="$emit('menuEvent', 'order')">Pedido Online</p>
 
     <img id="social-media" src="../assets/img/follow_us_social_media.png" alt="Seguimos...">
