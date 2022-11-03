@@ -5,21 +5,21 @@ import * as  VueRouter from 'vue-router';
 // Import defined Views
 import App from "@/App";
 import HomeView from "@/views/HomeView";
+import Subscription from "@/components/Subscription";
+import SubscriptionSuccess from "@/components/SubscriptionSuccess";
+import OrderOnlineView from "@/views/OrderOnlineView";
+import NotFound from "@/components/NotFound";
 
 
 // Here we will define all the routes
 const routes = [
     {path: '/', name: "HomeRoute", component: HomeView},
-
-    // Add the missing paths to views and components
-
-    // '/subscription'
-    // '/subscription/success'
-    // '/order-online'
-    // '/order-online/checkout'
+    {path: '/subscription', name: "SubscriptionRoute", component: Subscription},
+    {path: '/subscription/success', name: "SubSuccessRoute", component: SubscriptionSuccess},
+    {path: '/order-online', name: "OrderOnlineRoute", component: OrderOnlineView},
 
 
-    // add not Found path: '*' -> at the end
+    {path: '/:pathMatch(.*)*', component: NotFound}
 ];
 
 // Create the object router, add pass the routes above

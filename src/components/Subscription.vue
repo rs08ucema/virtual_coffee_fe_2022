@@ -49,7 +49,7 @@ export default {
   },
   methods: {
     subscribe() {
-      this.$router.push({name: "SubSuccessRoute", params: {clientName: this.firstName}})
+      this.$router.push({name: "SubSuccessRoute", query: {clientName: this.firstName}})
     }
   }
 }

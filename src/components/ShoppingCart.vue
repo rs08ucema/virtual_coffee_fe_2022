@@ -58,7 +58,6 @@ export default {
           this.shoppingCart[index]["quantity"] += 1;
           this.shoppingCart[index]["subtotal"] += Number(this.shoppingCart[index]["price"]);
           this.$forceUpdate()
-          // this.shoppingCart.sort();
           return true;
         }
       })
@@ -85,6 +84,7 @@ export default {
     },
     orderCart() {
 
+     //  TODO lesson 4
       // add programmatic navigation to CheckoutRouteView, with params (total and shoppingCart)
       // this.$router.push()
     }
@@ -196,9 +196,15 @@ export default {
   background-color: bisque;
 }
 
+/* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield !important;
 }
 </style>
