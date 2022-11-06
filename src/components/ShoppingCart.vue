@@ -26,6 +26,8 @@
 </template>
 
 <script>
+import {toRaw} from 'vue';
+
 export default {
   name: "ShoppingCart",
   props: ['newItem'],
@@ -42,14 +44,18 @@ export default {
     }
   },
   watch: {
-    newItem: function (item) {
+    newItem: function ($event) {
+      const item = toRaw($event);
       this.addShoppingCart(item);
     },
-    shoppingCart: function (items) {
-      let subtotal = 0;
-      items.forEach(item => subtotal += item["subtotal"])
-      this.total = subtotal;
-    },
+    shoppingCart: {
+      handler(newItem) {
+        let subtotal = 0;
+        newItem.forEach(item => subtotal += item["subtotal"])
+        this.total = subtotal;
+      },
+      deep: true // when watch an array - to trigger on mutation, the deep option must be specified. 
+    }
   },
   methods: {
     addShoppingCart(newItem) {
@@ -84,7 +90,7 @@ export default {
     },
     orderCart() {
 
-     //  TODO lesson 4
+      //  TODO lesson 4
       // add programmatic navigation to CheckoutRouteView, with params (total and shoppingCart)
       // this.$router.push()
     }
