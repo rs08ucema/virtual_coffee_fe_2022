@@ -9,6 +9,9 @@ import Subscription from "@/components/Subscription";
 import SubscriptionSuccess from "@/components/SubscriptionSuccess";
 import OrderOnlineView from "@/views/OrderOnlineView";
 import NotFound from "@/components/NotFound";
+import CheckoutView from "@/views/CheckoutView";
+import CheckoutSuccessView from "@/views/CheckoutSuccess";
+import ServerErrorView from "@/views/ServerError";
 
 
 // Here we will define all the routes
@@ -18,6 +21,9 @@ const routes = [
     {path: '/subscription/success', name: "SubSuccessRoute", component: SubscriptionSuccess},
     {path: '/order-online', name: "OrderOnlineRoute", component: OrderOnlineView},
 
+    {path: '/order-online/checkout', name: "CheckoutRoute", component: CheckoutView, props: true},
+    {path: '/order-online/checkout/order/:order_id', name: "CheckoutSuccessRoute", component: CheckoutSuccessView},
+    {path: '/order-online/checkout/err', name: "CheckoutServerErrorRoute", component: ServerErrorView},
 
     {path: '/:pathMatch(.*)*', component: NotFound}
 ];
