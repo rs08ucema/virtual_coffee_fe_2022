@@ -93,13 +93,6 @@ export default {
       // TODO lesson 4
       // this.$router.push({}) define name and query params. user JSON
 
-      this.$router.push({
-        name: "CheckoutRoute",
-        query: {
-          total: parseInt(this.total),
-          shoppingCart: JSON.stringify(this.shoppingCart)
-        }
-      });
     }
   }
 }
