@@ -1,11 +1,9 @@
 <template>
   <div id="header-container">
 
-    <!--  add router-link to HomePage replace the <div> by <router-link>-->
-
-    <div>
+    <router-link :to="{name: 'HomeRoute'}">
       <img src="../assets/img/coffee_logo.jpg" alt="Coffee Logo">
-    </div>
+    </router-link>
 
 
     <div id="header-title">
@@ -13,15 +11,13 @@
       <p id="subtitle">{{ subtitle }}</p>
     </div>
 
-    <!--  add router-link to NewSubscription-->
-
-    <div class="header-button">
+    <router-link class="header-button" :to="{name: 'SubscriptionRoute'}">
       <div style="width: 145px">
         <div id="menu-container" v-if="showButton">
           {{ subscription }}
         </div>
       </div>
-    </div>
+    </router-link>
 
   </div>
 </template>
@@ -33,12 +29,18 @@ export default {
     showButton: {
       type: Boolean,
       default: true
+    },
+    title: {
+      type: String,
+      default: "Virtual Coffee"
+    },
+    subtitle: {
+      type: String,
+      default: "El verdadero sabor a café"
     }
   },
   data() {
     return {
-      title: "Virtual Coffee",
-      subtitle: "El verdadero sabor a café",
       subscription: "Subscribite",
     }
   }
