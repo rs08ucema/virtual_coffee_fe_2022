@@ -9,7 +9,7 @@
       <div id="checkout-data">
         <div id="checkout-item-list">
           <h2>Carrito</h2>
-          <CheckoutItem v-for="(item, index) in this.$route.params['shoppingCart']" v-bind:key="index"
+          <CheckoutItem v-for="(item, index) in JSON.parse($route.query['shoppingCart'])" v-bind:key="index"
                         v-bind:name="item.name"
                         v-bind:quantity="item.quantity"
                         v-bind:price="item.price"
@@ -42,7 +42,7 @@
             <input type="text" v-model="address" required>
 
             <div>
-              <h2>Total: <span>$ {{ this.$route.params["total"] }}</span></h2>
+              <h2>Total: <span>$ {{ $route.query['total'] }}</span></h2>
               <input id="confirm-order" type="submit" value="Confirmar Pedido">
             </div>
           </form>
@@ -78,7 +78,7 @@ export default {
         user: this.fullName,
         address: this.address,
         phone_number: this.phoneNumber,
-        shopping_cart: this.$route.params['shoppingCart'],
+        shopping_cart: JSON.parse(this.$route.query['shoppingCart']),
       })
           .then(response => {
             console.log(response)
@@ -91,7 +91,7 @@ export default {
     }
   },
   mounted() {
-    if (this.$route.params['shoppingCart'] === undefined) {
+    if (this.$route.query['shoppingCart'] === undefined) {
       this.$router.push({name: "OrderOnlineRoute"})
     }
   }

@@ -90,9 +90,9 @@ export default {
     },
     orderCart() {
 
-      //  TODO lesson 4
-      // add programmatic navigation to CheckoutRouteView, with params (total and shoppingCart)
-      // this.$router.push()
+      // TODO lesson 4
+      // this.$router.push({}) define name and query params. user JSON
+
     }
   }
 }
