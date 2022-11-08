@@ -89,9 +89,10 @@ export default {
       this.shoppingCart.splice(index, 1);
     },
     orderCart() {
-
-      // TODO lesson 4
-      // this.$router.push({}) define name and query params. user JSON
+      this.$router.push({
+        name: "CheckoutRoute",
+        query: {total: this.total, shoppingCart: JSON.stringify(this.shoppingCart)}
+      })
 
     }
   }

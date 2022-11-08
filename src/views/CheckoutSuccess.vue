@@ -8,7 +8,7 @@
     <div>
       <img src="../assets/img/shopping_cart_success_icon_177410.png" alt="Orden OK">
       <h2>Estamos elaborando su pedido</h2>
-      <h3>Pedido número: #{{ this.$route.query["order_id"] }}</h3>
+      <h3>Pedido número: #{{ this.$route.params["order_id"] }}</h3>
     </div>
 
     <router-link :to="{ name: 'HomeRoute'}">Home</router-link>
